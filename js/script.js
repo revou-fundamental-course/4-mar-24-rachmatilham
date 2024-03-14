@@ -5,11 +5,6 @@ const resetButton = document.querySelector("#btn-2");
 const resultH2 = document.querySelector("h2.result");
 const explanation = document.querySelector("h3.bmi-category");
 
-window.onload = () => {
-  submitButton.addEventListener("click", calculate);
-  resetButton.addEventListener("click", resetBMI);
-};
-
 function calculate(e) {
   e.preventDefault();
   // Logic to count BMI
@@ -30,6 +25,9 @@ function calculate(e) {
   resultH2.innerText = bmiResult;
   explanation.innerText = `Kamu masuk kategori ${category}`;
 }
+
+submitButton.addEventListener("click", calculate);
+resetButton.addEventListener("click", resetBMI);
 
 function resetBMI() {
   weight = "";
